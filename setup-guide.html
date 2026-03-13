@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OperaStream Setup Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #1a202c;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #718096;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .status {
+      background: #f7fafc;
+      border-left: 4px solid #48bb78;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .status h2 {
+      color: #2d3748;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .status p {
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    .step {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 20px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+
+    .step:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #667eea;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      margin-right: 15px;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      display: inline-block;
+      color: #1a202c;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .step p {
+      color: #4a5568;
+      line-height: 1.8;
+      margin: 15px 0;
+    }
+
+    .button {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 10px 10px 10px 0;
+      transition: all 0.2s;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background: #5568d3;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .button.secondary {
+      background: #48bb78;
+    }
+
+    .button.secondary:hover {
+      background: #38a169;
+    }
+
+    .code {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      margin: 15px 0;
+      overflow-x: auto;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .checklist li {
+      padding: 12px 0;
+      padding-left: 35px;
+      position: relative;
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    .checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: #48bb78;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .warning {
+      background: #fff5f5;
+      border-left: 4px solid #f56565;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .warning p {
+      color: #742a2a;
+      margin: 0;
+    }
+
+    .success {
+      background: #f0fff4;
+      border-left: 4px solid #48bb78;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .success p {
+      color: #22543d;
+      margin: 0;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 OperaStream Setup</h1>
+    <p class="subtitle">Get your MVP running in 3 minutes</p>
+
+    <div class="status">
+      <h2>📋 Current Status</h2>
+      <p>Your Supabase project is connected. You need to create the database tables and add sample data. This takes about 3 minutes.</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">1</span>
+      <h3>Create Database Tables</h3>
+      <p>Click this button to open your Supabase SQL Editor:</p>
+      <a href="https://supabase.com/dashboard/project/vfsuqgusrawzqilgaayq/sql/new" target="_blank" class="button">
+        Open SQL Editor →
+      </a>
+      <p>Then:</p>
+      <ul class="checklist">
+        <li>You'll see a blank SQL editor</li>
+        <li>Open the <code>migration.sql</code> file from this project</li>
+        <li>Copy ALL the content (Ctrl+A, Ctrl+C)</li>
+        <li>Paste into the editor (Ctrl+V)</li>
+        <li>Click <strong>RUN</strong> button (or press Ctrl+Enter)</li>
+        <li>Wait for "Success" message (~5 seconds)</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <span class="step-number">2</span>
+      <h3>Add Sample Data</h3>
+      <p>After tables are created, run this in your terminal:</p>
+      <div class="code">node scripts/direct-seed.mjs</div>
+      <p>This adds:</p>
+      <ul class="checklist">
+        <li>10 sample patients with medical records</li>
+        <li>Lab results and vital signs</li>
+        <li>Healthcare team members</li>
+        <li>External contacts database</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <span class="step-number">3</span>
+      <h3>Create Storage Buckets</h3>
+      <p>For the Presentation Manager feature, create 4 storage buckets:</p>
+      <a href="https://supabase.com/dashboard/project/vfsuqgusrawzqilgaayq/storage/buckets" target="_blank" class="button secondary">
+        Open Storage Settings →
+      </a>
+      <p>Click "Create new bucket" and add these buckets (ALL must be PUBLIC):</p>
+      <ul class="checklist">
+        <li><strong>presentation-images</strong> - Public: YES</li>
+        <li><strong>presentation-videos</strong> - Public: YES</li>
+        <li><strong>presentation-pacs</strong> - Public: YES</li>
+        <li><strong>presentation-documents</strong> - Public: YES</li>
+      </ul>
+    </div>
+
+    <div class="success">
+      <p>🎉 Once complete, your MVP is ready for presentations!</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">✓</span>
+      <h3>What You Get</h3>
+      <ul class="checklist">
+        <li>Patient management with real medical records</li>
+        <li>Lab results and PACS imaging viewer</li>
+        <li>Team collaboration tools</li>
+        <li>Medical education presentation manager</li>
+        <li>Virtual nursing desktop interface</li>
+        <li>AI-powered clinical assistant</li>
+      </ul>
+    </div>
+
+    <div class="warning">
+      <p><strong>⏱️ Time Estimate:</strong> This entire process takes about 3 minutes. All your tables are already set up correctly!</p>
+    </div>
+  </div>
+</body>
+</html>
